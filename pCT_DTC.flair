@@ -1,0 +1,1945 @@
+# flair project file
+Version: 300
+Mode: fluka
+Title: MC-CAD Test
+md5: a2e848a4a74dadc7c5947f1e09ca5a62
+Input:
+TITLE
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+*Define the beam characteristics
+BEAM PROTON -0.23 0.0 -2.5 -0.5 -0.5
+*Define the beam position
+BEAMPOS ,,, -50.
+SOURCE , 1 1 1
+BIASING , 0,, 3 BIAS BIAS
+BIASING , 0,, 9 FPGA102 FPGA4002
+STEPSIZE , 0.0001,, T1ABS1 LAYER41
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 850.
+*Void sphere
+SPH void 0.0 0.0 0.0 800.
+*Air sphere
+SPH air 0.0 0.0 0.0 750.
+RCC phantom 0 -12 -23 0 24 0 8
+RPP bias 27 450 -3 3 10 42
+RPP fpga102 36.5 40.5 -2.0 2.0 20. 22
+RPP fpga502 86.5 90.5 -2.0 2.0 23 25
+RPP fpga1002 136.5 140.5 -2.0 2.0 26 28.0
+RPP fpga2002 236.5 240.5 -2.0 2.0 29.0 31
+RPP fpga3002 336.5 340.5 -2.0 2.0 32.0 34.0
+RPP fpga4002 436.5 440.5 -2.0 2.0 35.0 37.0
+*Trackers
+RPP tracker1 -13.5 13.5 -8 8 0.0 0.24
+XYP t1abs 0.02
+XYP t1alpGlu 0.0205
+XYP t1alpid 0.0255
+XYP t1airGap 0.1885
+XYP t1chipAl 0.1915
+XYP t1chipPi 0.1935
+XYP t1chipGl 0.194
+XYP t1topAl 0.197
+XYP t1topPi 0.199
+XYP t1kapGlu 0.1995
+XYP t1kapt 0.207
+XYP t1botGlu 0.2075
+XYP t1botAl 0.2175
+XYP t1botPi 0.2195
+XYP t1absGlu 0.22
+*Contained by the box
+!XYP t1abs2 0.24
+RPP tracker2 -13.5 13.5 -8 8 5.24 5.48
+XYP t2abs1 5.26
+XYP t2alpGlu 5.2605
+XYP t2alpid 5.2655
+XYP t2airGap 5.4285
+XYP t2chipAl 5.4315
+XYP t2chipPi 5.4335
+XYP t2chipGl 5.434
+XYP t2topAl 5.437
+XYP t2topPi 5.439
+XYP t2kapGlu 5.4395
+XYP t2kapt 5.447
+XYP t2botGlu 5.4475
+XYP t2botAl 5.4575
+XYP t2botPi 5.4595
+XYP t2absGlu 5.46
+*Contained by the box
+!XYP t2abs2 5.48
+*Frame (one side only)
+RPP frame 13.5 15.0 -8.0 8.0 7.98 10.48
+RPP pcbT1 13.5 26.5 -8 8 0.0205 0.1905
+*pcbs...
+RPP pcb1 13.5 26.5 -8 8 10.8305 11.0005
+RPP pcb3 13.5 26.5 -8 8 11.9305 12.1005
+RPP pcb5 13.5 26.5 -8 8 13.0305 13.2005
+RPP pcb7 13.5 26.5 -8 8 14.1305 14.3005
+RPP pcb9 13.5 26.5 -8 8 15.2305 15.4005
+RPP pcb11 13.5 26.5 -8 8 16.3305 16.5005
+RPP pcb13 13.5 26.5 -8 8 17.4305 17.6005
+RPP pcb15 13.5 26.5 -8 8 18.5305 18.7005
+RPP pcb17 13.5 26.5 -8 8 19.6305 19.8005
+RPP pcb19 13.5 26.5 -8 8 20.7305 20.9005
+RPP pcb21 13.5 26.5 -8 8 21.8305 22.0005
+RPP pcb23 13.5 26.5 -8 8 22.9305 23.1005
+RPP pcb25 13.5 26.5 -8 8 24.0305 24.2005
+RPP pcb27 13.5 26.5 -8 8 25.1305 25.3005
+RPP pcb29 13.5 26.5 -8 8 26.2305 26.4005
+RPP pcb31 13.5 26.5 -8 8 27.3305 27.5005
+RPP pcb33 13.5 26.5 -8 8 28.4305 28.6005
+RPP pcb35 13.5 26.5 -8 8 29.5305 29.7005
+RPP pcb37 13.5 26.5 -8 8 30.6305 30.8005
+RPP pcb39 13.5 26.5 -8 8 31.7305 31.9005
+RPP pcb41 13.5 26.5 -8 8 32.8305 33.0005
+*Detector (45 layers)
+RPP dtc -13.5 13.5 -8 8 10.48 33.03
+*dtclayer
+XYP dtcAbs 10.83
+XYP alpGlu 10.8305
+XYP alpide 10.8405
+XYP airGap 10.9985
+XYP chipAl 11.0015
+XYP chipPi 11.0035
+XYP chipGlu 11.004
+XYP topAl 11.007
+XYP topPi 11.009
+XYP kaptGlu 11.0095
+XYP kapton 11.017
+XYP botGlu 11.0175
+XYP botAl 11.0275
+XYP botPi 11.0295
+XYP absGlu 11.03
+*Layers
+XYP Layer2 11.58
+XYP Layer3 12.13
+XYP Layer4 12.68
+XYP Layer5 13.23
+XYP Layer6 13.78
+XYP Layer7 14.33
+XYP Layer8 14.88
+XYP Layer9 15.43
+XYP Layer10 15.98
+XYP Layer11 16.53
+XYP Layer12 17.08
+XYP Layer13 17.63
+XYP Layer14 18.18
+XYP Layer15 18.73
+XYP Layer16 19.28
+XYP Layer17 19.83
+XYP Layer18 20.38
+XYP Layer19 20.93
+XYP Layer20 21.48
+XYP Layer21 22.03
+XYP Layer22 22.58
+XYP Layer23 23.13
+XYP Layer24 23.68
+XYP Layer25 24.23
+XYP Layer26 24.78
+XYP Layer27 25.33
+XYP Layer28 25.88
+XYP Layer29 26.43
+XYP Layer30 26.98
+XYP Layer31 27.53
+XYP Layer32 28.08
+XYP Layer33 28.63
+XYP Layer34 29.18
+XYP Layer35 29.73
+XYP Layer36 30.28
+XYP Layer37 30.83
+XYP Layer38 31.38
+XYP Layer39 31.93
+XYP Layer40 32.48
+!XYP Layer41 33.03
+!RPP clip 0.0 15. 0.0 15. 0.0 22.
+END
+*Black hole
+REGION BLKBODY 5
+	+blkbody -void
+*Void around
+REGION VOID 5
+	+void -air
+*Air around the treatment room
+REGION AIR 5
+	+air -phantom -bias  -tracker1 -tracker2 -dtc -frame -fpga102 -fpga502 -fpga1002 -fpga2002 -fpga3002 -fpga4002 -pcbT1 
+	-pcb1 -pcb3 -pcb5 -pcb7 -pcb9 -pcb11 -pcb13 -pcb15 -pcb17 -pcb19 -pcb21  -pcb23 - pcb25  -pcb27 -pcb29 -pcb31 -pcb33 -pcb35 -pcb37 -pcb39 -pcb41
+*Phantom (cylinder)
+REGION PHANTOM 5
+	+phantom 
+*Bias area
+REGION BIAS 5
+	+bias -fpga1002 -fpga102 -fpga2002 -fpga3002 -fpga4002 -fpga502  
+*FPGA10-2
+REGION FPGA102 5
+	+fpga102
+*FPGA50-2
+REGION FPGA502 5
+	+fpga502
+*FPGA100-2
+REGION FPGA1002 5
+	+fpga1002 
+*FPGA200-2
+REGION FPGA2002 5
+	+fpga2002 
+*FPGA300-2
+REGION FPGA3002 5
+	+fpga3002 
+*FPGA400-2
+REGION FPGA4002 5
+	+fpga4002 
+*Tracker1
+REGION T1ABS1 5
+	+tracker1 +t1abs  
+REGION T1ALPGLU 5
+	+tracker1 +t1alpGlu -t1abs 
+REGION T1ALPID 5
+	+tracker1 +t1alpid -t1alpGlu 
+REGION T1AIRGAP 5
+	+tracker1 +t1airGap -t1alpid 
+REGION T1CHIPAL 5
+	+tracker1 +t1chipAl -t1airGap  
+REGION T1CHIPPI 5
+	+tracker1 +t1chipPi -t1chipAl  
+REGION T1CHIPGL 5
+	+tracker1 +t1chipGl -t1chipPi  
+REGION T1TOPAL 5
+	+tracker1 +t1topAl -t1chipGl  
+REGION T1TOPPI 5
+	+tracker1 +t1topPi -t1topAl 
+REGION T1KAPGLU 5
+	+tracker1 +t1kapGlu -t1topPi 
+REGION T1KAPT 5
+	+tracker1 +t1kapt -t1kapGlu 
+REGION T1BOTGLU 5
+	+tracker1 +t1botGlu -t1kapt  
+REGION T1BOTAL 5
+	+tracker1 +t1botAl -t1botGlu  
+REGION T1BOTPI 5
+	+tracker1 +t1botPi -t1botAl 
+REGION T1ABSGLU 5
+	+tracker1 +t1absGlu -t1botPi 
+REGION T1ABS2 5
+	+tracker1 -t1absGlu 
+*Tracker2
+REGION T2ABS1 5
+	+tracker2 +t2abs1
+REGION T2ALPGLU 5
+	+tracker2 +t2alpGlu -t2abs1 
+REGION T2ALPID 5
+	+tracker2 +t2alpid -t2alpGlu  
+REGION T2AIRGAP 5
+	+tracker2 +t2airGap -t2alpid 
+REGION T2CHIPAL 5
+	+tracker2 +t2chipAl -t2airGap  
+REGION T2CHIPPI 5
+	+tracker2 +t2chipPi -t2chipAl  
+REGION T2CHIPGL 5
+	+tracker2 +t2chipGl -t2chipPi  
+REGION T2TOPAL 5
+	+tracker2 +t2topAl -t2chipGl
+REGION T2TOPPI 5
+	+tracker2 +t2topPi -t2topAl
+REGION T2KAPGLU 5
+	+tracker2 +t2kapGlu -t2topPi 
+REGION T2KAPT 5
+	+tracker2 +t2kapt -t2kapGlu  
+REGION T2BOTGLU 5
+	+tracker2 +t2botGlu -t2kapt 
+REGION T2BOTAL 5
+	+tracker2 +t2botAl -t2botGlu 
+REGION T2BOTPI 5
+	+tracker2 +t2botPi -t2botAl 
+REGION T2ABSGLU 5
+	+tracker2 +t2absGlu -t2botPi 
+REGION T2ABS2 5
+	+tracker2 -t2absGlu 
+*Frame (one side only)
+REGION FRAME 5
+	+frame  
+REGION PCBT1
+	+pcbT1 
+*pcbs
+REGION PCB1
+	+pcb1
+REGION PCB3
+	+pcb3
+REGION PCB5
+	+pcb5
+REGION PCB7
+	+pcb7
+REGION PCB9
+	+pcb9
+REGION PCB11
+	+pcb11
+REGION PCB13
+	+pcb13
+REGION PCB15
+	+pcb15
+REGION PCB17
+	+pcb17
+REGION PCB19
+	+pcb19
+REGION PCB21
+	+pcb21
+REGION PCB23
+	+pcb23
+REGION PCB25
+	+pcb25
+REGION PCB27
+	+pcb27
+REGION PCB29
+	+pcb29
+REGION PCB31
+	+pcb31
+REGION PCB33
+	+pcb33
+REGION PCB35
+	+pcb35
+REGION PCB37
+	+pcb37
+REGION PCB39
+	+pcb39
+REGION PCB41
+	+pcb41
+*DTC
+REGION DTCABS 5
+	+dtc +dtcAbs 
+REGION ALPGLU 5
+	+dtc +alpGlu -dtcAbs 
+REGION ALPIDE 5
+	+dtc +alpide -alpGlu  
+REGION AIRGAP 5
+	+dtc +airGap -alpide 
+REGION CHIPAL 5
+	+dtc +chipAl -airGap  
+REGION CHIPPI 5
+	+dtc +chipPi -chipAl  
+REGION CHIPGLU 5
+	+dtc +chipGlu -chipPi  
+REGION TOPAL 5
+	+dtc +topAl -chipGlu   
+REGION TOPPI 5
+	+dtc +topPi -topAl  
+REGION KAPTGLU 5
+	+dtc +kaptGlu -topPi 
+REGION KAPTON 5
+	+dtc +kapton -kaptGlu
+REGION BOTGLU 5
+	+dtc +botGlu -kapton
+REGION BOTAL 5
+	+dtc +botAl -botGlu
+REGION BOTPI 5
+	+dtc +botPi -botAl 
+REGION ABSGLU 5
+	+dtc +absGlu -botPi 
+*Layers
+REGION LAYER2 5
+	+dtc +Layer2 -absGlu 
+REGION LAYER3 5
+	+dtc +Layer3  -Layer2
+REGION LAYER4 5
+	+dtc +Layer4  -Layer3
+REGION LAYER5 5
+	+dtc +Layer5  -Layer4
+REGION LAYER6 5
+	+dtc +Layer6  -Layer5
+REGION LAYER7 5
+	+dtc +Layer7  -Layer6
+REGION LAYER8 5
+	+dtc +Layer8  -Layer7
+REGION LAYER9 5
+	+dtc +Layer9  -Layer8
+REGION LAYER10 5
+	+dtc +Layer10  -Layer9
+REGION LAYER11 5
+	+dtc +Layer11  -Layer10
+REGION LAYER12 5
+	+dtc +Layer12  -Layer11
+REGION LAYER13 5
+	+dtc +Layer13  -Layer12
+REGION LAYER14 5
+	+dtc +Layer14  -Layer13
+REGION LAYER15 5
+	+dtc +Layer15  -Layer14
+REGION LAYER16 5
+	+dtc +Layer16  -Layer15
+REGION LAYER17 5
+	+dtc +Layer17  -Layer16
+REGION LAYER18 5
+	+dtc +Layer18  -Layer17
+REGION LAYER19 5
+	+dtc +Layer19  -Layer18
+REGION LAYER20 5
+	+dtc +Layer20  -Layer19
+REGION LAYER21 5
+	+dtc +Layer21  -Layer20
+REGION LAYER22 5
+	+dtc +Layer22  -Layer21
+REGION LAYER23 5
+	+dtc +Layer23  -Layer22
+REGION LAYER24 5
+	+dtc +Layer24  -Layer23
+REGION LAYER25 5
+	+dtc +Layer25  -Layer24
+REGION LAYER26 5
+	+dtc +Layer26  -Layer25
+REGION LAYER27 5
+	+dtc +Layer27  -Layer26
+REGION LAYER28 5
+	+dtc +Layer28  -Layer27
+REGION LAYER29 5
+	+dtc +Layer29  -Layer28
+REGION LAYER30 5
+	+dtc +Layer30  -Layer29
+REGION LAYER31 5
+	+dtc +Layer31  -Layer30
+REGION LAYER32 5
+	+dtc +Layer32  -Layer31
+REGION LAYER33 5
+	+dtc +Layer33  -Layer32
+REGION LAYER34 5
+	+dtc +Layer34  -Layer33
+REGION LAYER35 5
+	+dtc +Layer35  -Layer34
+REGION LAYER36 5
+	+dtc +Layer36  -Layer35
+REGION LAYER37 5
+	+dtc +Layer37  -Layer36
+REGION LAYER38 5
+	+dtc +Layer38  -Layer37
+REGION LAYER39 5
+	+dtc +Layer39  -Layer38
+REGION LAYER40 5
+	+dtc +Layer40  -Layer39
+REGION LAYER41 5
+	+dtc  -Layer40
+END
+*These are the lattices that copy the geometry to each of the placeholder region layers and call the translations to get the positions
+LATTICE trans1 LAYER2,,, 1. 1.
+LATTICE trans2 LAYER3,,, 2. 2.
+LATTICE trans3 LAYER4,,, 3. 3.
+LATTICE trans4 LAYER5,,, 4. 4.
+LATTICE trans5 LAYER6,,, 5. 5.
+LATTICE trans6 LAYER7,,, 6. 6.
+LATTICE trans7 LAYER8,,, 7. 7.
+LATTICE trans8 LAYER9,,, 8. 8.
+LATTICE trans9 LAYER10,,, 9. 9.
+LATTICE trans10 LAYER11,,, 10. 10.
+LATTICE trans11 LAYER12,,, 11. 11.
+LATTICE trans12 LAYER13,,, 12. 12.
+LATTICE trans13 LAYER14,,, 13. 13.
+LATTICE trans14 LAYER15,,, 14. 14.
+LATTICE trans15 LAYER16,,, 15. 15.
+LATTICE trans16 LAYER17,,, 16. 16.
+LATTICE trans17 LAYER18,,, 17. 17.
+LATTICE trans18 LAYER19,,, 18. 18.
+LATTICE trans19 LAYER20,,, 19. 19.
+LATTICE trans20 LAYER21,,, 20. 20.
+LATTICE trans21 LAYER22,,, 21. 21.
+LATTICE trans22 LAYER23,,, 22. 22.
+LATTICE trans23 LAYER24,,, 23. 23.
+LATTICE trans24 LAYER25,,, 24. 24.
+LATTICE trans25 LAYER26,,, 25. 25.
+LATTICE trans26 LAYER27,,, 26. 26.
+LATTICE trans27 LAYER28,,, 27. 27.
+LATTICE trans28 LAYER29,,, 28. 28.
+LATTICE trans29 LAYER30,,, 29. 29.
+LATTICE trans30 LAYER31,,, 30. 30.
+LATTICE trans31 LAYER32,,, 31. 31.
+LATTICE trans32 LAYER33,,, 32. 32.
+LATTICE trans33 LAYER34,,, 33. 33.
+LATTICE trans34 LAYER35,,, 34. 34.
+LATTICE trans35 LAYER36,,, 35. 35.
+LATTICE trans36 LAYER37,,, 36. 36.
+LATTICE trans37 LAYER38,,, 37. 37.
+LATTICE trans38 LAYER39,,, 38. 38.
+LATTICE trans39 LAYER40,,, 39. 39.
+LATTICE trans40 LAYER41,,, 40. 40.
+GEOEND
+ROT-DEFI trans1 0.0,,,,, -0.55
+ROT-DEFI trans2 0.0,,,,, -1.1
+ROT-DEFI trans3 0.0,,,,, -1.65
+ROT-DEFI trans4 0.0,,,,, -2.2
+ROT-DEFI trans5,,,,,, -2.75
+ROT-DEFI trans6,,,,,, -3.3
+ROT-DEFI trans7,,,,,, -3.85
+ROT-DEFI trans8,,,,,, -4.4
+ROT-DEFI trans9,,,,,, -4.95
+ROT-DEFI trans10,,,,,, -5.5
+ROT-DEFI trans11,,,,,, -6.05
+ROT-DEFI trans12,,,,,, -6.6
+ROT-DEFI trans13,,,,,, -7.15
+ROT-DEFI trans14,,,,,, -7.7
+ROT-DEFI trans15,,,,,, -8.25
+ROT-DEFI trans16,,,,,, -8.8
+ROT-DEFI trans17,,,,,, -9.35
+ROT-DEFI trans18,,,,,, -9.9
+ROT-DEFI trans19,,,,,, -10.45
+ROT-DEFI trans20,,,,,, -11.0
+ROT-DEFI trans21,,,,,, -11.55
+ROT-DEFI trans22,,,,,, -12.1
+ROT-DEFI trans23,,,,,, -12.65
+ROT-DEFI trans24,,,,,, -13.2
+ROT-DEFI trans25,,,,,, -13.75
+ROT-DEFI trans26,,,,,, -14.3
+ROT-DEFI trans27,,,,,, -14.85
+ROT-DEFI trans28,,,,,, -15.4
+ROT-DEFI trans29,,,,,, -15.95
+ROT-DEFI trans30,,,,,, -16.5
+ROT-DEFI trans31,,,,,, -17.05
+ROT-DEFI trans32,,,,,, -17.6
+ROT-DEFI trans33,,,,,, -18.15
+ROT-DEFI trans34,,,,,, -18.7
+ROT-DEFI trans35,,,,,, -19.25
+ROT-DEFI trans36,,,,,, -19.8
+ROT-DEFI trans37,,,,,, -20.35
+ROT-DEFI trans38,,,,,, -20.9
+ROT-DEFI trans39,,,,,, -21.45
+ROT-DEFI trans40,,,,,, -22.0
+*Add and define the materials used in the detector, pcb, super glue and "air gap"
+MATERIAL Kapton,,, 1.42
+COMPOUND Kapton -0.0264 HYDROGEN -0.6911 CARBON -0.0733 NITROGEN -0.2092 OXYGEN
+MATERIAL glue,,, 1.05
+COMPOUND glue -0.7603 CARBON -0.0709 HYDROGEN -0.1688 OXYGEN
+MATERIAL cfrp,,, 1.66
+COMPOUND cfrp -1.0 CARBON
+MATERIAL ALUMINUM 13.,, 2.7
+MATERIAL SILICON 14.,, 2.33
+*104 Air dry (near sea level)
+MATERIAL AIRGATE,,, 0.00129
+COMPOUND AIRGATE -0.000124 CARBON -0.755268 NITROGEN -0.231781 OXYGEN -0.012827 ARGON
+MATERIAL PCB,,, 1.7
+COMPOUND PCB -0.068442752 HYDROGEN -0.27804208 CARBON -0.4056325 OXYGEN -0.18077359 \
+	 SILICON -0.067109079 COPPER
+*276 Water liquid H2O
+*Chemical Formula:  H -- O -- H
+MATERIAL WATGATE,,, 1.0
+COMPOUND WATGATE 2.0 HYDROGEN 1.0 OXYGEN
+MAT-PROP ,,, 78.0 WATGATE
+MAT-PROP ,,, 85.7 AIRGATE
+MAT-PROP ,,, 173. SILICON
+MAT-PROP ,,, 166. ALUMINUM
+*Assign materials to the different regions
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , AIRGATE AIR
+ASSIGNMA , WATGATE PHANTOM
+ASSIGNMA , AIRGATE BIAS
+ASSIGNMA , SILICON FPGA102
+ASSIGNMA , SILICON FPGA502
+ASSIGNMA , SILICON FPGA1002
+ASSIGNMA , SILICON FPGA2002
+ASSIGNMA , SILICON FPGA3002
+ASSIGNMA , SILICON FPGA4002
+*Tracker 1
+ASSIGNMA , cfrp T1ABS1
+ASSIGNMA , glue T1ALPGLU
+ASSIGNMA , SILICON T1ALPID
+ASSIGNMA , AIRGATE T1AIRGAP
+ASSIGNMA , ALUMINUM T1CHIPAL
+ASSIGNMA , Kapton T1CHIPPI
+ASSIGNMA , glue T1CHIPGL
+ASSIGNMA , ALUMINUM T1TOPAL
+ASSIGNMA , Kapton T1TOPPI
+ASSIGNMA , glue T1KAPGLU
+ASSIGNMA , Kapton T1KAPT
+ASSIGNMA , glue T1BOTGLU
+ASSIGNMA , ALUMINUM T1BOTAL
+ASSIGNMA , Kapton T1BOTPI
+ASSIGNMA , glue T1ABSGLU
+ASSIGNMA , cfrp T1ABS2
+*Tracker 2
+ASSIGNMA , cfrp T2ABS1
+ASSIGNMA , glue T2ALPGLU
+ASSIGNMA , SILICON T2ALPID
+ASSIGNMA , AIRGATE T2AIRGAP
+ASSIGNMA , ALUMINUM T2CHIPAL
+ASSIGNMA , Kapton T2CHIPPI
+ASSIGNMA , glue T2CHIPGL
+ASSIGNMA , ALUMINUM T2TOPAL
+ASSIGNMA , Kapton T2TOPPI
+ASSIGNMA , glue T2KAPGLU
+ASSIGNMA , Kapton T2KAPT
+ASSIGNMA , glue T2BOTGLU
+ASSIGNMA , ALUMINUM T2BOTAL
+ASSIGNMA , Kapton T2BOTPI
+ASSIGNMA , glue T2ABSGLU
+ASSIGNMA , cfrp T2ABS2
+*Frame
+ASSIGNMA , ALUMINUM FRAME
+ASSIGNMA , PCB PCBT1
+*pcbs
+ASSIGNMA , PCB PCB1
+ASSIGNMA , PCB PCB3
+ASSIGNMA , PCB PCB5
+ASSIGNMA , PCB PCB7
+ASSIGNMA , PCB PCB9
+ASSIGNMA , PCB PCB11
+ASSIGNMA , PCB PCB13
+ASSIGNMA , PCB PCB15
+ASSIGNMA , PCB PCB17
+ASSIGNMA , PCB PCB19
+ASSIGNMA , PCB PCB21
+ASSIGNMA , PCB PCB23
+ASSIGNMA , PCB PCB25
+ASSIGNMA , PCB PCB27
+ASSIGNMA , PCB PCB29
+ASSIGNMA , PCB PCB31
+ASSIGNMA , PCB PCB33
+ASSIGNMA , PCB PCB35
+ASSIGNMA , PCB PCB37
+ASSIGNMA , PCB PCB39
+ASSIGNMA , PCB PCB41
+*DTC
+ASSIGNMA , ALUMINUM DTCABS
+ASSIGNMA , glue ALPGLU
+ASSIGNMA , SILICON ALPIDE
+ASSIGNMA , AIRGATE AIRGAP
+ASSIGNMA , ALUMINUM CHIPAL
+ASSIGNMA , Kapton CHIPPI
+ASSIGNMA , glue CHIPGLU
+ASSIGNMA , ALUMINUM TOPAL
+ASSIGNMA , Kapton TOPPI
+ASSIGNMA , glue KAPTGLU
+ASSIGNMA , Kapton KAPTON
+ASSIGNMA , glue BOTGLU
+ASSIGNMA , ALUMINUM BOTAL
+ASSIGNMA , Kapton BOTPI
+ASSIGNMA , glue ABSGLU
+*Dose to FPGA objects
+USRBIN FPGA102 10. DOSE -21 40.5 2. 26.0 36.5 -2. 24.0 1. 1. 1.
+USRBIN FPGA502 10. DOSE -22 90.5 2. 29.0 86.5 -2. 27.0 1. 1. 1.
+USRBIN FPGA1002 10. DOSE -23 140.5 2. 32.0 136.5 -2. 30.0 1. 1. 1.
+USRBIN FPGA2002 10. DOSE -24 240.5 2. 35.0 236.5 -2. 33.0 1. 1. 1.
+USRBIN FPGA3002 10. DOSE -25 340.5 2. 38 336.5 -2. 36 1. 1. 1.
+USRBIN FPGA4002 10. DOSE -26 440.5 2. 41.0 436.5 -2. 39.0 1. 1. 1.
+*Dose to water phantom
+USRBIN phanDose 10 DOSE -30 8 5 -15 -8 -5 -31 32 20 640
+*Overview of primary protons,  fluence of thermal neutrons and >20Mev Hadrons
+USRBIN OverProt 10. BEAMPART -31 450 3 50. 0. -3. -50. 450 6 100
+USRBIN n1Flu 10 SI1MEVNE -32 450 3 250 0 -3. -100 450 6 350
+USRBIN hadFlu 10 HADGT20M -33 450 3 250 0 -3. -100. 450 6 350
+*Tracker1 fluence and dose
+USRBIN t1nFlu 10 SI1MEVNE -41 13.5 8 0.0255 -13.5 -8 0.0205 270 160 10
+USRBIN t1HadFlu 10 HADGT20M -42 13.5 8 0.0255 -13.5 -8 0.0205 270 160 10
+USRBIN t1Dose 10 DOSE -43 13.5 8 0.0255 -13.5 -8 0.0205 270 160 10
+*Tracker2 fluence and dose
+USRBIN t2nFlu 10 SI1MEVNE -44 13.5 8 5.2655 -13.5 -8 5.2605 270 160 10
+USRBIN t2HadFl 10 HADGT20M -45 13.5 8 5.2655 -13.5 -8 5.2605 270 160 10
+USRBIN t2Dose 10 DOSE -46 13.5 8 5.2655 -13.5 -8 5.2605 270 160 10
+*Detector fluence and dose
+USRBIN nDetFlu 10 SI1MEVNE -51 13.5 8 33.03 -13.5 -8 10.48 108 80 902
+USRBIN haDetFlu 10 HADGT20M -52 13.5 8 33.03 -13.5 -8 10.48 108 80 902
+USRBIN detDose 10 DOSE -53 13.5 8 33.03 -13.5 -8 10.48 108 80 902
+USRBIN detBeam 10 BEAMPART -54 13.5 8 33.03 -13.5 -8 10.48 108 80 902
+*Set the random number seed
+RANDOMIZ , 1. 18142.
+*Set the number of primary histories to be simulated in the run
+START , 1125000.
+STOP
+EndInput
+
+Notes:
+	|If we use USRBIN card definition BY REGION:
+	|◦DEPOSITED ENERGY is in GeV and we take the value as is.
+	|◦DOSE,  we must divide this value by the volume of the detector and the result will be inGeV/g.
+	|If we use USRBIN card definition BY X-Y-Z:
+	|◦DEPOSITED ENERGY,  we must multiply this value times the volume of the detector. Once we do that, the result will be in GeV.
+	|◦DOSE is in GeV/g, and we take the value as is.
+	|
+	|•To obtain dose in Gy, multiply GeV/g by 1.602176462E-7
+Page: Run
+F77bound: True
+F77dline: False
+Tabs: 0.1 0.32 0.56 0.81 1.0
+Compile: pTherapy
+	link: ldpmqmd
+	source: ['pTherapy.f']
+End
+
+# Run information
+Run: <default>
+	Exe:      pTherapy
+	Last:     250
+	StartRun: 1590674172
+End
+Material: GOLD
+	color: #D0B0D0
+End
+Material: AIR
+	color: #40B0B0
+End
+Material: SILICON
+	color: #10D090
+End
+Material: CALCIUM
+	color: #80B010
+End
+Material: TIN
+	color: #901050
+End
+Material: MAGNESIU
+	color: #A050D0
+End
+Material: NITROGEN
+	color: #B07050
+End
+Material: Pcb
+	color: #301030
+End
+Material: CARBON
+	color: #40D010
+End
+Material: BLCKHOLE
+	color: #3050B0
+End
+Material: glue
+	color: #20B0D0
+End
+Material: HYDROGEN
+	color: #D03030
+End
+Material: CHLORINE
+	color: #503010
+End
+Material: AIR1
+	color: #805030
+End
+Material: SODIUM
+	color: #6050B0
+End
+Material: cfr
+	color: #503070
+End
+Material: glueCon1
+	color: #709010
+End
+Material: TANTALUM
+	color: #90D0D0
+End
+Material: ARGON
+	color: #D0B050
+End
+Material: IRON
+	color: #50B0B0
+End
+Material: AIRDET
+	color: #60D010
+End
+Material: MERCURY
+	color: #B010D0
+End
+Material: COPPER
+	color: #207030
+End
+Material: NICKEL
+	color: #50D010
+End
+Material: OXYGEN
+	color: #70B030
+End
+Material: TITANIUM
+	color: #4030B0
+End
+Material: BERYLLIU
+	color: #707030
+End
+Material: VACUUM
+	color: #209050
+End
+Material: TUNGSTEN
+	color: #909010
+End
+Material: HELIUM
+	color: #9050D0
+End
+Material: SILVER
+	color: #609050
+End
+Material: Kapton
+	color: #605050
+End
+Material: LEAD
+	color: #B01050
+End
+Material: ALUMINUM
+	color: #B09070
+End
+Material: Concrete
+	color: #A050B0
+End
+Material: cfrp
+	color: #609090
+End
+Material: glueCont
+	color: #C07050
+End
+Material: WATER
+	color: #B07010
+End
+Geometry: Geometry
+	Frame.tsplit: 0.5093008338678641
+	Frame.vsplit: 0.5015015015015015
+	Layer: Borders
+		Options.viewport: 0
+		Show.color: None
+	End
+	Layer: Media
+		3D.antialias: 2
+		3D.clip.0: clip
+		3D.clipnegative.0: 1
+		3D.edgedetect: 1
+		3D.xray: 38
+		Image.file: ../../Downloads/Create a new layer. Set your foreground color to white. Click back on ....gif
+		Image.marker: 1
+		Image.marker.0: 30.0 86.0 0.0 0.0 0.0
+		Options.gridlevel: 15
+		Options.shortcut: F3
+		Show.label: None
+		Show.vertex: 0
+	End
+	Layer: 3D
+		3D: 1
+		3D._visible: 1
+		3D.edgedetect: 1
+		3D.fov: 64.3
+		Options.shortcut: F4
+		Options.viewport: 0
+		Show: 0
+		Show.lattice: 1
+		Show.voxel: 1
+	End
+	Layer: My3D
+		3D: 1
+		3D._visible: 1
+		3D.ambient: 180
+		3D.clip.0: clip
+		3D.edgedetect: 1
+		3D.fov: 64.3
+		3D.shadows: 0
+		3D.skip1stblack: 1
+		3D.usrbinastexture: 0
+		3D.xray: 171
+		Options.grid: 0
+		Options.gridlevel: 22
+		Options.latticelevel: 11
+		Options.shortcut: F4
+		Options.textbackground: 131
+		Options.viewport: 0
+		Palette._visible: 1
+		Palette.label: Dose [rad/s]
+		Show: 0
+		Show.lattice: 1
+		Show.voxel: 1
+		Usrbin._visible: 1
+		Usrbin.alpha: 39
+		Usrbin.file: pCTElectronics_31.bnn
+		Usrbin.norm: (1.602176462E-7)*100*(1E9)
+	End
+	Layer: My3D Overview
+		3D: 1
+		3D._visible: 1
+		3D.ambient: 73
+		3D.antialias: 2
+		3D.clip.0: clip
+		3D.edgedetect: 1
+		3D.fov: 64.3
+		3D.usrbinastexture: 0
+		3D.xray: 67
+		Options.grid: 0
+		Options.gridlevel: 0
+		Options.latticelevel: 14
+		Options.viewport: 0
+		Palette.label: Dose [rad/s]
+		Show: 0
+		Show.lattice: 1
+		Show.voxel: 1
+		Usrbin.alpha: 39
+		Usrbin.file: pCTElectronics_31.bnn
+		Usrbin.norm: (1.602176462E-7)*100*(1E9)
+	End
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	cbcolors: 0
+	cbcpd: 0
+	cbround: 0
+	coord: X-Y
+	extends: 490.391 3335.38
+	grid: 0
+	kind: Material
+	layer: Media
+	origin: -2.25928 -84.0934 0
+	subtype: Material
+	title: GeoViewer Red plot
+End
+Plot: Green
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	cbtics: 1
+	coord: Z-X
+	extends: 62.3095 38.6075
+	grid: 0
+	kind: Material
+	layer: Lattice
+	origin: 6.80624 0 -10.2871
+	subtype: Material
+	title: GeoViewer Green plot
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	cbtics: 1
+	coord: Z-Y
+	extends: 69.4446 41.9339
+	grid: 0
+	kind: Material
+	layer: Lattice
+	origin: 0 -2.68674 0.666846
+	subtype: Material
+	title: GeoViewer Blue plot
+End
+Plot: Magenta
+	Type: Geometry
+	cbcolors: 0
+	cbcpd: 0
+	cbround: 0
+	cbtics: 1
+	coord: X-Y
+	extends: 40.1878 24.2984
+	grid: 0
+	kind: Material
+	layer: Lattice
+	origin: -1.63811 -2.28569 0
+	subtype: Material
+	title: GeoViewer Magenta plot
+End
+Plot: DTC_Electronics_WPHAN_31_plot
+	Type: USRBIN
+	bxmax: 3
+	bxmin: 0.
+	bymax: 3
+	bymin: -3.
+	bzmax: -7
+	bzmin: -10.
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_31.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 0.19198614452034229
+	max: 3.59991146E-03
+	min: 3.52805038E-03
+	proj: Y
+	title: USRBIN DTC Electronics WPHAN 31
+End
+Plot: DTC_Electronics_WPHAN_32_plot
+	Type: USRBIN
+	bymax: 3
+	bymin: -3.
+	cbcpd: 0
+	cblog: 1
+	cbmax: 1E-2
+	cbmin: 1E-10
+	cbtics: 1
+	commands:
+		|set title font "Verdana, 35"
+		|set title offset 0,1
+		|set key font "Verdana, 30"  
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.08
+		|set rmargin at screen 0.85
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.93
+		|
+		|#Label settings:
+		|set ylabel "Lateral position [cm]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Longitudinal position [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-1
+		|set cblabel "Neutron fluence [n/cm^2 per primary proton]" font "Verdana, 30"
+		|set cblabel offset 10,0
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set cbtics font "Verdana, 30"
+		|
+		|set xrange[-100:250]
+		|set xtics -100,25,250
+		|set xtics offset 0,-0.5
+		|
+		|set yrange[0:450]
+		|#set ytics ymin,spaceBetween,ymax
+		|set ytics offset -0.5,0
+		|
+		|#set cbrange[1E1:1E7]
+		|set cbtics offset -0.5,0
+		|set format cb "10^{%L}"
+	datafile: DTC_Electronics_WPHAN_32.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 22.361441768976785
+	lw.0: 2
+	max: 7.59221101E-03
+	min: 4.16080077E-08
+	proj: Y
+	title: 1 MeV-neutron equivalent fluence (pCT)
+End
+Plot: DTC_Electronics_WPHAN_33_plot
+	Type: USRBIN
+	bymax: 2
+	bymin: -2.
+	bzmax: 30
+	bzmin: 20.
+	cbcpd: 0
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_33.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 0.69914806678676145
+	max: 2.28879438E-03
+	min: 6.59157573E-09
+	proj: X
+	title: >20 MeV-hadron fluence (pCT)
+	ylog: 1
+End
+Plot: DTC_Electronics_WPHAN_41_plot
+	Type: USRBIN
+	bxmax: -8.3
+	bxmin: -8.4
+	bymax: 2
+	bymin: -2.
+	bzmax: 0.0255
+	bzmin: 0.0205
+	cbcpd: 0
+	cbmax: 1E-2
+	cbmin: 1E-5
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_41.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.0529560824800498E-005
+	max: 5.27253840E-03
+	min: 5.26161306E-03
+	proj: Y
+	title: 1 MeV-neutron equivalent fluence on tracker (pCT)
+	ylog: 1
+End
+Plot: DTC_Electronics_WPHAN_42_plot
+	Type: USRBIN
+	cbcpd: 0
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_42.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 4.6173558474436075E-003
+	max: 1.05369296E-02
+	min: 2.76972258E-07
+	title: >20 MeV-hadron fluence on tracker (pCT)
+End
+Plot: DTC_Electronics_WPHAN_43_plot
+	Type: USRBIN
+	bxmax: 1
+	bxmin: -1.
+	bymax: 1
+	bymin: -1.
+	bzmax: 0.0255
+	bzmin: 0.0205
+	cbcpd: 0
+	cbmax: 1E-11
+	cbmin: 1E-14
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_43.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 3.4660795736199547E-007
+	max: 1.77123638E-05
+	min: 1.71105712E-05
+	norm: 1.602176462E-7
+	title: Dose deposited in tracker
+End
+Plot: DTC_Electronics_WPHAN_44_plot
+	Type: USRBIN
+	bxmax: -8.4
+	bxmin: -8.5
+	bymax: 2
+	bymin: -2.
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_44.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.0568061023871839E-005
+	max: 5.29457815E-03
+	min: 5.27594704E-03
+	title: USRBIN DTC Electronics WPHAN 44
+End
+Plot: DTC_Electronics_WPHAN_45_plot
+	Type: USRBIN
+	bxmax: 2
+	bxmin: -2.
+	bymax: 2
+	bymin: -2.
+	bzmax: 5.2655
+	bzmin: 5.2605
+	cbtics: 1
+	commands:
+		|set title font "Verdana, 35"
+		|set title offset 0,1
+		|set key font "Verdana, 30"  
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.08
+		|set rmargin at screen 0.85
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.93
+		|
+		|#Label settings:
+		|set ylabel "Lateral position [cm]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Longitudinal position [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-1
+		|set cblabel "Hadron fluence[n/cm^2 per primary proton]" font "Verdana, 30"
+		|set cblabel offset 10,0
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set cbtics font "Verdana, 30"
+		|
+		|set xrange[-13.5:13.5]
+		|set xtics -13.5,3,13.5
+		|set xtics offset 0,-0.5
+		|
+		|set yrange[-8:8]
+		|#set ytics ymin,spaceBetween,ymax
+		|set ytics offset -0.5,0
+		|
+		|#set cbrange[1E1:1E7]
+		|set cbtics offset -0.5,0
+		|set format cb "10^{%L}"
+	datafile: DTC_Electronics_WPHAN_45.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 3.0678073051541583E-004
+	max: 3.83489649E-03
+	min: 3.83463991E-03
+	title: USRBIN DTC Electronics WPHAN 45
+	ylog: 1
+End
+Plot: DTC_Electronics_WPHAN_46_plot
+	Type: USRBIN
+	bxmax: 1.5
+	bxmin: -1.5
+	bymax: 1
+	bymin: -1.
+	bzmax: 5.2655
+	bzmin: 5.2605
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_46.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 5.0850600423193155E-007
+	max: 1.82543408E-05
+	min: 1.66964692E-05
+	norm: 1.602176462E-7
+	title: USRBIN DTC Electronics WPHAN 46
+End
+Plot: DTC_Electronics_WPHAN_51_plot
+	Type: USRBIN
+	bxmax: -6.25
+	bxmin: -6.9
+	bymax: 0.4
+	bymin: -0.6
+	cbcpd: 0
+	cblog: 1
+	cbtics: 1
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.15
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.90
+		|
+		|#Label settings:
+		|set ylabel "Neutron fluence [n/cm^2 per primary proton]" font "Verdana, 30"
+		|set ylabel offset -13,0
+		|set xlabel "Longitudinal depth [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|
+		|set xrange[10:37]
+		|set xtics 10,2,37
+		|set xtics offset 0,-0.5
+		|
+		|#set yrange[0:2.2]
+		|#set ytics 0,0.2,2.2
+		|set ytics offset -0.5,0
+	datafile: DTC_Electronics_WPHAN_51.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 5.2400267930664456E-002
+	max: 5.89963607E-03
+	min: 1.80661082E-04
+	title: 1 MeV-neutron equivalent fluence inside central DTC (pCT)
+End
+Plot: DTC_Electronics_WPHAN_52_plot
+	Type: USRBIN
+	bxmax: 0.5
+	bxmin: -0.5
+	bymax: 0.4
+	bymin: -0.6
+	cblog: 1
+	cbtics: 1
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.15
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.90
+		|
+		|#Label settings:
+		|set ylabel "Hadron fluence [n/cm^2 per primary proton]" font "Verdana, 30"
+		|set ylabel offset -13,0
+		|set xlabel "Longitudinal depth [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|
+		|set xrange[10:37]
+		|set xtics 10,2,37
+		|set xtics offset 0,-0.5
+		|
+		|#set yrange[0:2.2]
+		|#set ytics 0,0.2,2.2
+		|set ytics offset -0.5,0
+	datafile: DTC_Electronics_WPHAN_52.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 4.0627849952904270E-002
+	max: 3.74565343E-03
+	min: 6.87819047E-05
+	title: >20 MeV-hadron fluence inside central DTC (pCT)
+End
+Plot: DTC_Electronics_WPHAN_53_plot
+	Type: USRBIN
+	bxmax: 0.5
+	bxmin: -0.5
+	bymax: 0.6
+	bymin: -0.4
+	cbcpd: 0
+	cblog: 1
+	cbtics: 1
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.15
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.90
+		|
+		|#Label settings:
+		|set ylabel "Dose [Gy]" font "Verdana, 30"
+		|set ylabel offset -13,0
+		|set xlabel "Longitudinal depth [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|
+		|set xrange[10:37]
+		|set xtics 10,2,37
+		|set xtics offset 0,-0.5
+		|
+		|#set yrange[0:2.2]
+		|#set ytics 0,0.2,2.2
+		|set ytics offset -0.5,0
+	datafile: DTC_Electronics_WPHAN_53.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 2.8846020291819585E-004
+	max: 5.83739493E-05
+	min: 1.21139534E-08
+	title: Depth-dose profile inside central DTC
+End
+Plot: DTC_Electronics_WPHAN_54_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_54.bnn
+	grid: 0
+	hist: 2D Projection
+	proj: X
+	title: USRBIN DTC Electronics WPHAN 54
+End
+Plot: DTC_Electronics_WPHAN_60_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_60.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 4.6980909473859324E-007
+	max: 2.93630684E-08
+	min: 2.93630684E-08
+	title: USRBIN DTC Electronics WPHAN 60
+End
+Plot: DTC_Electronics_WPHAN_61_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_61.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 2.5365148204059561E-008
+	max: 1.58532176E-09
+	min: 1.58532176E-09
+	title: USRBIN DTC Electronics WPHAN 61
+End
+Plot: DTC_Electronics_WPHAN_62_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_62.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 7.6058812581436508E-009
+	max: 4.75367579E-10
+	min: 4.75367579E-10
+	title: USRBIN DTC Electronics WPHAN 62
+End
+Plot: DTC_Electronics_WPHAN_63_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_63.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 2.1352764001392184E-009
+	max: 1.33454775E-10
+	min: 1.33454775E-10
+	title: USRBIN DTC Electronics WPHAN 63
+End
+Plot: DTC_Electronics_WPHAN_64_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_64.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.6613370375279105E-010
+	max: 4.16333565E-11
+	min: 4.16333565E-11
+	title: USRBIN DTC Electronics WPHAN 64
+End
+Plot: DTC_Electronics_WPHAN_65_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_65.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 2.8733143642156744E-010
+	max: 1.79582148E-11
+	min: 1.79582148E-11
+	title: USRBIN DTC Electronics WPHAN 65
+End
+Plot: DTC_Electronics_WPHAN_66_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_66.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 7.1168830118040163E-007
+	max: 4.44805188E-08
+	min: 4.44805188E-08
+	title: USRBIN DTC Electronics WPHAN 66
+End
+Plot: DTC_Electronics_WPHAN_67_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_67.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 8.0982950123598143E-008
+	max: 5.06143438E-09
+	min: 5.06143438E-09
+	title: USRBIN DTC Electronics WPHAN 67
+End
+Plot: DTC_Electronics_WPHAN_68_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_68.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.6579516426418195E-008
+	max: 1.03621978E-09
+	min: 1.03621978E-09
+	title: USRBIN DTC Electronics WPHAN 68
+End
+Plot: DTC_Electronics_WPHAN_69_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_69.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 2.4234667606037866E-009
+	max: 1.51466673E-10
+	min: 1.51466673E-10
+	title: USRBIN DTC Electronics WPHAN 69
+End
+Plot: DTC_Electronics_WPHAN_70_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_70.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.5476712134088193E-009
+	max: 9.67294508E-11
+	min: 9.67294508E-11
+	title: USRBIN DTC Electronics WPHAN 70
+End
+Plot: DTC_Electronics_WPHAN_71_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_71.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_72_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_72.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_73_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_73.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_74_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_74.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_75_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_75.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 4.6657414713990875E-006
+	max: 2.91608842E-07
+	min: 2.91608842E-07
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_76_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_76.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_77_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_77.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_78_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_78.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_79_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_79.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_80_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_80.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_81_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_81.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.0073662098147923E-006
+	max: 3.75460388E-07
+	min: 3.75460388E-07
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_82_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_82.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_83_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_83.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_84_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_84.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_85_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_85.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_86_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_86.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_87_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_87.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 7.7104920137571721E-007
+	max: 4.81905751E-08
+	min: 4.81905751E-08
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_88_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_88.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_89_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_89.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_90_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_90.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_91_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_91.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_92_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_92.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_93_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_93.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.0082645758302535E-006
+	max: 6.30165360E-08
+	min: 6.30165360E-08
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_94_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_94.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: DTC_Electronics_WPHAN_95_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_95.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.9796740609362473E-010
+	max: 4.36229629E-11
+	min: 4.36229629E-11
+	title: USRBIN DTC Electronics WPHAN 71
+End
+Plot: neutron1DOver
+	Type: USR-1D
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.1
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.9
+		|
+		|#Label settings:
+		|set ylabel "Neutron fluence [n/cm^2]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Distance from center of DTC [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set format y "10^{%L}"
+		|
+		|set xrange[0:450]
+		|set xtics 0,25,450
+		|set xtics offset 0,-0.5
+		|
+		|set yrange[1E-8:1E-2]
+		|#set ytics min,spaceBetween,max
+		|set ytics offset -0.5,0
+	file.0: DTC_Electronics_WPHAN_32_plot.dat
+	file.1: ../pTherapy/DTC_Electronics_WPHAN_32_plot.dat
+	grid: 0
+	lc.0: red
+	lc.1: blue
+	lw.0: 3
+	lw.1: 3
+	name.0: Proton CT
+	name.1: Proton Therapy
+	ndetectors: 2
+	title: 1 MeV neutron equivalent fluence
+	y.0: 0
+	y.1: 0
+	ylog: 1
+End
+Plot: neutron1DinDTC
+	Type: USR-1D
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.1
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.9
+		|
+		|#Label settings:
+		|set ylabel "Neutron fluence [n/cm^2]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Depth in DTC [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set format y "10^{%L}"
+		|
+		|set xrange[10.846:36.88]
+		|set xtics 10.85,1,36.85
+		|set xtics offset 0,-0.5
+		|
+		|set yrange[1E-6:1E-2]
+		|#set ytics min,spaceBetween,max
+		|set ytics offset -0.5,0
+	file.0: DTC_Electronics_WPHAN_51_plot.dat
+	file.1: ../pTherapy/pTherapy_Electronics_WPHAN/DTC_Electronics_WPHAN_51_plot.dat
+	grid: 0
+	lc.0: red
+	lc.1: blue
+	lw.0: 3
+	lw.1: 3
+	name.0: Proton CT
+	name.1: Proton Therapy
+	ndetectors: 2
+	title: 1 MeV neutron equivalent fluence
+	with.0: histogram
+	with.1: histogram
+	y.0: 0
+	y.1: 0
+	ylog: 1
+End
+Plot: hadron1DOver
+	Type: USR-1D
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.1
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.9
+		|
+		|#Label settings:
+		|set ylabel "Hadron fluence [n/cm^2]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Distance from center of DTC [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set format y "10^{%L}"
+		|
+		|set xrange[0:450]
+		|set xtics 0,25,450
+		|set xtics offset 0,-0.5
+		|
+		|#set yrange[1E-8:1E-2]
+		|#set ytics min,spaceBetween,max
+		|set ytics offset -0.5,0
+	file.0: DTC_Electronics_WPHAN_33_plot.dat
+	file.1: ../pTherapy/DTC_Electronics_WPHAN_33_plot.dat
+	grid: 0
+	lc.0: red
+	lc.1: blue
+	lw.0: 3
+	lw.1: 3
+	name.0: Proton CT
+	name.1: Proton Therapy
+	ndetectors: 2
+	title: >20 MeV Hadron fluence
+	y.0: 0
+	y.1: 0
+	ylog: 1
+End
+Plot: hadron1DOver01
+	Type: USR-1D
+	commands:
+		|set title font "Verdana, 35"
+		|set key font "Verdana, 30"
+		|
+		|#Canvas/plot screen size (make everything fit):
+		|set lmargin at screen 0.1
+		|set rmargin at screen 0.9
+		|set bmargin at screen 0.1
+		|set tmargin at screen 0.9
+		|
+		|#Label settings:
+		|set ylabel "Hadron fluence [n/cm^2]" font "Verdana, 30"
+		|set ylabel offset -10,0
+		|set xlabel "Distance from center of DTC [cm]" font "Verdana, 30"
+		|set xlabel offset 0,-2
+		|
+		|#tics/axis numbers:
+		|set xtics font "Verdana, 28"
+		|set ytics font "Verdana, 28"
+		|set format y "10^{%L}"
+		|
+		|set xrange[0:450]
+		|set xtics 0,25,450
+		|set xtics offset 0,-0.5
+		|
+		|#set yrange[1E-8:1E-2]
+		|#set ytics min,spaceBetween,max
+		|set ytics offset -0.5,0
+	file.0: DTC_Electronics_WPHAN_33_plot.dat
+	file.1: ../pTherapy/pTherapy_Electronics_WPHAN/DTC_Electronics_WPHAN_33_plot.dat
+	grid: 0
+	lc.0: red
+	lc.1: blue
+	lw.0: 3
+	lw.1: 3
+	name.0: Proton CT
+	name.1: Proton Therapy
+	ndetectors: 2
+	title: >20 MeV Hadron fluence
+	with.0: histogram
+	with.1: histogram
+	y.0: 0
+	y.1: 0
+	ylog: 1
+End
+Plot: DTC_Electronics_WPHAN_21_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_21.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.3835352774549392E-006
+	max: 4.32354774E-08
+	min: 4.32354774E-08
+	title: USRBIN DTC Electronics WPHAN 21
+End
+Plot: DTC_Electronics_WPHAN_22_plot
+	Type: USRBIN
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_22.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 1.2784735758941681E-007
+	max: 3.99522992E-09
+	min: 3.99522992E-09
+	title: USRBIN DTC Electronics WPHAN 22
+End
+Plot: DTC_Electronics_WPHAN_23_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_23.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 3.0525157512784062E-008
+	max: 9.53911172E-10
+	min: 9.53911172E-10
+	title: USRBIN DTC Electronics WPHAN 23
+End
+Plot: DTC_Electronics_WPHAN_24_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_24.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.3100258351767066E-009
+	max: 1.97188307E-10
+	min: 1.97188307E-10
+	title: USRBIN DTC Electronics WPHAN 24
+End
+Plot: DTC_Electronics_WPHAN_25_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_25.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 5.6285998084604216E-010
+	max: 1.75893744E-11
+	min: 1.75893744E-11
+	title: USRBIN DTC Electronics WPHAN 25
+End
+Plot: DTC_Electronics_WPHAN_26_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: DTC_Electronics_WPHAN_26.bnn
+	grid: 0
+	hist: 1D Projection
+	int: 6.2488614283040533E-010
+	max: 1.95276920E-11
+	min: 1.95276920E-11
+	title: USRBIN DTC Electronics WPHAN 26
+End
